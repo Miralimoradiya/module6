@@ -1,0 +1,1337 @@
+1) What is JavaScript?
+Ans:    JavaScript is a high-level, versatile, and widely used programming language primarily known for its 
+        role in web development. Here are some key aspects of JavaScript:
+
+        1. Client-Side Scripting: 
+            JavaScript is mainly used for client-side web development. It runs in web browsers, allowing developers to create interactive and dynamic web pages. It can be used to manipulate the Document Object Model (DOM), which represents the structure and content of a web page, to respond to user actions, update content, and enhance the user experience.
+
+        2. General-Purpose: 
+            While JavaScript is commonly associated with web development, it is a general-purpose programming language. This means it can be used for various applications beyond the web, including server-side development (using Node.js), desktop application development, game development, and more.
+
+        3. Dynamic and Weakly Typed: 
+            JavaScript is a dynamically typed language, which means you don't need to declare variable types explicitly. It's also weakly typed, allowing for flexible type conversions. This can be both an advantage and a source of potential bugs if not used carefully.
+
+        4. Event-Driven: 
+            JavaScript is often used to handle events and user interactions on web pages. Developers can attach event handlers to elements, such as buttons or forms, to define how the page should respond when events like clicks, mouse movements, or keyboard inputs occur.
+
+        5. ECMAScript: 
+            JavaScript is standardized through the ECMAScript specification. ECMAScript defines the syntax and core features of the language. Different versions of JavaScript (ES5, ES6, ES7, etc.) correspond to different versions of the ECMAScript specification, with each version introducing new features and improvements.
+
+        6. Libraries and Frameworks: 
+            JavaScript has a rich ecosystem of libraries and frameworks, such as jQuery, React, Angular, and Vue.js, that simplify and streamline web development tasks. These tools provide pre-built components, abstractions, and patterns for building complex web applications.
+
+        7. Cross-Browser Compatibility: 
+            JavaScript is supported by all major web browsers, including Chrome, Firefox, Safari, and Edge, which makes it a suitable choice for creating web applications that work across different platforms.
+
+        8. Asynchronous Programming: 
+            JavaScript excels at asynchronous programming, allowing developers to handle tasks like making network requests (AJAX), reading/writing files, and handling timers without blocking the main execution thread, which ensures smooth user experiences.
+
+
+
+
+
+
+2) What is the use of isNaN function?
+Ans:    The isNaN function in JavaScript is used to determine whether a value is "Not-a-Number" (NaN) or 
+        not. NaN is a special value in JavaScript that represents the result of an invalid or unrepresentable mathematical operation. It's often used to indicate that a numeric operation couldn't produce a meaningful result.
+
+        The isNaN function takes one argument and returns a Boolean value:
+
+        If the argument is NaN or cannot be converted to a number, isNaN returns true.
+        If the argument is a valid number (including positive and negative numbers, zero, and numeric strings that can be converted to numbers), isNaN returns false.
+        Here are some examples of how isNaN is commonly used:
+        ex:
+            isNaN(NaN);          // true
+            isNaN(10);            // false
+            isNaN("Hello");       // true (cannot be converted to a number)
+            isNaN("42");          // false (string "42" can be converted to the number 42)
+            isNaN(true);          // false (true is converted to 1)
+            isNaN(false);         // false (false is converted to 0)
+            isNaN(undefined);     // true (undefined cannot be converted to a number)
+        
+        The isNaN function is often used in conditional statements or validation checks to handle cases where you need to determine whether a value is a valid number or not. For example, you might use it to validate user input in a form, ensuring that numeric input is indeed a number before performing calculations.
+
+        It's worth noting that isNaN has some quirks. For example, it can return true for values that you might not expect, such as empty strings (""). To perform more robust numeric checks, you may want to consider using Number.isNaN() introduced in ECMAScript 6 (ES6), which is stricter in its evaluation and doesn't coerce non-numeric values to numbers.
+
+
+
+
+
+
+3) What is negative Infinity?
+Ans:    Negative Infinity, often denoted as -Infinity, is a special numeric value in JavaScript and many 
+        other programming languages. It represents the concept of negative infinity, which is a value that is smaller (or "less") than any finite negative number. In mathematical terms, it's used to describe a quantity that approaches negative infinity as it decreases without bound.
+
+        In JavaScript, you can encounter -Infinity as a result of certain operations or calculations. Here are a few examples:
+
+        1) Division by Zero: When you divide a finite number by zero in JavaScript, the result is -Infinity. For example:
+            var result = 10 / 0; // result is -Infinity
+
+        2) Subtraction from Negative Infinity: When you subtract a finite number from -Infinity, the result remains -Infinity. For example:
+            var result = -Infinity - 5; // result is -Infinity
+        
+        3) Mathematical Functions: Some mathematical functions or expressions can lead to -Infinity. For instance, taking the natural logarithm (Math.log()) of zero will yield -Infinity.
+            var result = Math.log(0); // result is -Infinity
+
+        It's important to note that -Infinity is not the same as the absence of a value (like undefined or null). It's a legitimate numeric value, albeit a special one that represents a value that's smaller than any finite negative number.
+
+        When working with -Infinity in JavaScript, you can use it in mathematical operations, comparisons, or conditions like any other number. For example, you can compare it to other numbers:
+            console.log(-Infinity < 0); // true
+            console.log(-Infinity > -1000); // true
+            console.log(-Infinity === -Infinity); // true
+        
+        In practical programming scenarios, -Infinity can be useful when dealing with scenarios where values can approach negative infinity or when handling exceptional cases like division by zero.
+
+
+
+
+
+4) Which company developed JavaScript?
+Ans:    JavaScript was developed by Netscape Communications Corporation, a technology company that 
+        played a significant role in the early days of the World Wide Web. Brendan Eich, an engineer at Netscape, created JavaScript in just 10 days in May 1995. Initially, it was known as "Mocha" and later "LiveScript" before finally being renamed JavaScript.
+
+        JavaScript was introduced in Netscape Navigator 2.0, one of the earliest web browsers, to add interactivity and dynamic behavior to web pages. Its initial purpose was to handle client-side scripting, enabling web developers to create more engaging and interactive websites.
+
+        JavaScript's popularity grew rapidly, and it became a fundamental technology for web development. Today, JavaScript is supported by all major web browsers and has evolved into a versatile and widely used programming language not only for web development but also for various other application domains, including server-side development (with Node.js), mobile app development, and more.
+
+
+
+
+
+
+5) What are undeclared and undefined variables?
+Ans:    "Undeclared" and "undefined" variables are related but distinct concepts in programming, often used 
+        in the context of JavaScript.
+
+        1. Undeclared Variables:
+            An undeclared variable is a variable that has been used in code without being declared (i.e., it lacks a var, let, or const keyword) in the current scope. When you attempt to use an undeclared variable, JavaScript will typically throw a reference error.
+                Example of an undeclared variable:
+                console.log(x); // ReferenceError: x is not defined
+            To avoid reference errors related to undeclared variables, it's essential to declare them using var, let, or const before using them.
+
+        2. Undefined Variables:
+            An undefined variable is a variable that has been declared but has not been assigned a value. In JavaScript, when you declare a variable without initializing it, it automatically gets the value undefined by default.
+                Example of an undefined variable:
+                let y;
+                console.log(y); // undefined
+            In this example, y has been declared using let, but it hasn't been assigned any value, so its default value is undefined.
+            It's important to note that "undefined" is a special value in JavaScript, and it represents the absence of a value or a variable that has been declared but not yet assigned a value.
+
+        Here's a summary of the differences:
+        Undeclared variables are those that have not been declared at all in the current scope and will result in a reference error when used.
+        Undefined variables are those that have been declared but have not been assigned a value. They have the value undefined by default.
+        It's generally a good practice to declare variables explicitly and initialize them with appropriate values to avoid confusion and unexpected behavior in your code.
+
+
+
+
+
+
+
+6) Write the code for adding new elements dynamically?
+Ans:    To add new elements dynamically to a web page using JavaScript, you can follow these steps. In 
+        this example, we'll add new list items to an unordered list (<ul>) whenever a button is clicked.
+
+        HTML:
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Add Elements Dynamically</title>
+            </head>
+            <body>
+                <ul id="myList">
+                    <!-- Existing list items (if any) go here -->
+                </ul>
+
+                <button id="addItemButton">Add Item</button>
+
+                <script src="script.js"></script>
+            </body>
+            </html>
+        
+        JavaScript (script.js):
+            // Get references to the list and button
+            const myList = document.getElementById('myList');
+            const addItemButton = document.getElementById('addItemButton');
+
+            // Function to add a new item to the list
+            function addItem() {
+                // Create a new list item element
+                const newItem = document.createElement('li');
+                
+                // Set the text content of the new item
+                newItem.textContent = 'New Item';
+                
+                // Append the new item to the list
+                myList.appendChild(newItem);
+            }
+
+            // Add a click event listener to the button
+            addItemButton.addEventListener('click', addItem);
+
+        In this code:
+        1. We start with an empty unordered list (<ul>) and a button (<button>) in the HTML.
+        2. In the JavaScript code, we get references to the list and the button using document.getElementById.
+        3. We define a function addItem that creates a new list item (<li>), sets its text content to "New Item," and appends it to the existing list (myList) using the appendChild method.
+        4. We add a click event listener to the button (addItemButton) that calls the addItem function when the button is clicked.
+
+        Now, when you click the "Add Item" button, a new list item will be added to the unordered list on the web page. You can further customize the content and attributes of the dynamically added elements as needed for your specific use case.
+
+
+
+
+
+7) What is the difference between ViewState and SessionState?
+Ans:    ViewState and SessionState are two distinct concepts in web development, often associated 
+        with different technologies and serving different purposes. They are commonly used in the context of ASP.NET, a web application framework, but similar concepts exist in other web development environments as well. Let's explore the key differences between ViewState and SessionState:
+    
+    1. Scope:
+        ViewState: ViewState is specific to a single web page (or web control) and is used to maintain state information across postbacks for that page. It is stored as a hidden field in the HTML markup and sent back and forth between the client and server with each request/response cycle for that page.
+        SessionState: SessionState is not tied to a specific page but is associated with a user's session on the web server. It allows you to store and retrieve user-specific data across multiple pages within a single user session. Data stored in SessionState is typically kept on the server.
+
+    2.Lifetime:
+        ViewState: The data stored in ViewState is only available for the duration of a single page's lifecycle. Once the page is rendered and sent to the client, ViewState data is lost.
+        SessionState: Data stored in SessionState persists throughout a user's session. It remains accessible as long as the session is active, even if the user navigates to different pages within the application.
+
+    3.Storage Location:
+        ViewState: ViewState data is stored as a hidden field within the page's HTML markup and is transferred between the client and server with each request/response for that page.
+        SessionState: SessionState data is stored on the web server. Depending on the configuration, it can be stored in memory, in a separate process (e.g., State Server or SQL Server), or even in a custom storage provider.
+
+    4. Usage:
+        ViewState: ViewState is typically used for maintaining small amounts of page-specific state information, such as control values or other data needed for postbacks on a single page.
+        SessionState: SessionState is used for storing and sharing user-specific data that needs to persist across multiple pages within a user session. Common examples include user authentication data, shopping cart contents, and user preferences.
+
+    In summary, ViewState is primarily used for preserving page-specific state information across postbacks on a single page, while SessionState is used for maintaining user-specific data across multiple pages and requests within a user's session. Both are useful tools in web development but serve different purposes and have different scopes and lifetimes.
+
+
+
+
+
+
+8) What is === operator?
+Ans:    The === operator in JavaScript is called the "strict equality" or "strict comparison" operator. 
+        It is used to compare two values for equality without performing type coercion. In other words, it checks if the values are not only equal in value but also of the same data type.
+
+        Here's how the === operator works:
+        1. If the types of both operands are the same, and their values are equal, the operator returns true.
+        2. If the types of the operands are different, the operator returns false, even if the values may be the same when converted to a common type.
+        3. It does not perform automatic type conversion, which can lead to more predictable and reliable comparisons.
+
+        Example comparisons using the === operator:
+            3 === 3        // true (both are numbers with the same value)
+            "hello" === "hello"  // true (both are strings with the same value)
+            true === true  // true (both are booleans with the same value)
+        
+        Conversely, the == operator (loose equality operator) performs type coercion, which means it tries to convert the operands to a common type before making a comparison. This can sometimes lead to unexpected results, especially when comparing values of different types.
+
+        Example comparisons using the == operator:
+            3 == "3"      // true (type coercion: "3" is converted to a number)
+            true == 1     // true (type coercion: true is converted to 1)
+            null == undefined  // true (both are considered loosely equal)
+
+        In most cases, it is recommended to use the === operator (strict equality) because it provides more predictable and reliable comparisons, and it does not rely on potentially unexpected type coercion.
+
+
+
+
+
+
+9) How can the style/class of an element be changed?
+Ans:    You can change the style and class of an HTML element using JavaScript. Here are methods to do both:
+
+        1. Changing the Style of an Element:
+            You can change the style of an element by directly modifying its style property in JavaScript. This property allows you to access and modify specific CSS properties of the element. Here's an example:
+                HTML:
+                    <div id="myElement">This is a div</div>
+
+                JavaScript:
+                    // Get a reference to the element
+                    var myElement = document.getElementById('myElement');
+
+                    // Change the background color to red
+                    myElement.style.backgroundColor = 'red';
+
+                    // Change the font size to 20 pixels
+                    myElement.style.fontSize = '20px';
+
+                    // You can change any CSS property in a similar way
+
+            In this example, we first get a reference to the element with the id "myElement" using getElementById, and then we use the style property to change its background color and font size.
+
+        2. Changing the Class of an Element:
+            You can change the class of an element by modifying its className property or by using the classList property for more advanced operations. Here's an example:
+                HTML:
+                    <div id="myElement" class="initialClass">This is a div</div>
+
+                JavaScript:
+                    // Get a reference to the element
+                    var myElement = document.getElementById('myElement');
+
+                    // Change the class of the element
+                    myElement.className = 'newClass'; // Replaces the entire class attribute
+
+                    // Alternatively, you can use classList for more flexibility
+                    myElement.classList.add('anotherClass'); // Adds a class
+                    myElement.classList.remove('initialClass'); // Removes a class
+                    myElement.classList.toggle('active'); // Toggles a class
+
+            In this example, we first get a reference to the element with the id "myElement" and change its class using the className property. Alternatively, we can use the classList property to add, remove, or toggle individual classes. This can be especially useful when you want to manipulate classes without affecting other existing classes on the element.
+
+        By using these methods, you can dynamically change the style and class of HTML elements in response to user interactions or other events in your JavaScript code.
+
+
+
+
+
+
+10) How to read and write a file using JavaScript?
+Ans:    In JavaScript, you can read and write files in different environments, such as in a web browser 
+        using the File API or in a server-side environment like Node.js using the built-in File System (fs) module. Here, I'll provide examples for both scenarios:
+
+        **** Reading and Writing Files in a Browser (Using the File API): ****
+        1. Reading a File (Browser):
+            To read a file in a web browser, you can use the File and FileReader objects from the File API. Here's an example of how to read a text file selected by the user using an input element:
+
+            HTML:
+                <input type="file" id="fileInput">
+                <pre id="fileContent"></pre>
+
+            JavaScript:
+                const fileInput = document.getElementById('fileInput');
+                const fileContent = document.getElementById('fileContent');
+
+                fileInput.addEventListener('change', function () {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    fileContent.textContent = e.target.result;
+                };
+
+                reader.readAsText(file);
+                });
+
+        2. Writing a File (Browser):
+            Writing files in a web browser is not straightforward due to security restrictions. Typically, web applications don't have direct file-writing capabilities for security reasons. If you need to save data, you can use mechanisms like the Web Storage API (localStorage or sessionStorage) or make a request to a server to handle file creation.
+
+
+        **** Reading and Writing Files in Node.js: ****
+        1.Reading a File (Node.js):
+            In Node.js, you can read files using the built-in fs module. Here's an example:
+
+        JavaScript:
+            const fs = require('fs');
+
+            fs.readFile('example.txt', 'utf8', (err, data) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                console.log(data);
+            });
+            Writing a File (Node.js):
+
+            Similarly, you can write files using the fs module:
+
+        JavaScript:
+            const fs = require('fs');
+
+            const content = 'This is some text to write to a file.';
+
+            fs.writeFile('example.txt', content, 'utf8', (err) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                console.log('File has been written.');
+            });
+
+        In both examples for Node.js, make sure to handle errors appropriately, as file operations can potentially fail due to various reasons such as file not found, insufficient permissions, or disk space issues.
+
+        Please note that reading and writing files can have security implications, especially in web applications. Be cautious when handling user-generated content or when dealing with sensitive data.
+
+
+
+
+
+
+11) What are all the looping structures in JavaScript?
+Ans:    JavaScript provides several looping structures that allow you to execute a block of code 
+        repeatedly. The primary looping structures in JavaScript are:
+
+        1. for Loop:
+            The for loop is one of the most commonly used looping structures. It has three parts: initialization, condition, and increment/decrement.
+                for (let i = 0; i < 5; i++) {
+                    // Code to be executed repeatedly
+                }
+
+        2. while Loop:
+            The while loop repeats a block of code as long as a specified condition is true.
+                let i = 0;
+                while (i < 5) {
+                    // Code to be executed repeatedly
+                    i++;
+                }
+
+        3. do...while Loop:
+            The do...while loop is similar to the while loop but guarantees that the code block is executed at least once before checking the condition.
+                let i = 0;
+                do {
+                    // Code to be executed repeatedly
+                    i++;
+                } while (i < 5);
+        
+        4. for...in Loop:
+            The for...in loop is used for iterating over the properties of an object. It's often used with objects and arrays.
+                const person = {
+                    firstName: 'John',
+                    lastName: 'Doe',
+                    age: 30
+                };
+                for (const key in person) {
+                    // Code to iterate over object properties
+                    console.log(key, person[key]);
+                }
+    
+        5. for...of Loop:
+            The for...of loop is used for iterating over iterable objects like arrays, strings, maps, sets, and more.
+                const colors = ['red', 'green', 'blue'];
+                for (const color of colors) {
+                    // Code to iterate over array elements
+                    console.log(color);
+                }
+
+        6. forEach() Method (Array Method):
+            The forEach() method is used for iterating over elements in an array. It provides a concise way to loop through array elements.
+                const fruits = ['apple', 'banana', 'cherry'];
+                fruits.forEach((fruit) => {
+                    // Code to iterate over array elements
+                    console.log(fruit);
+                });
+                
+        These are the primary looping structures available in JavaScript. You can choose the loop that best suits your specific use case, whether it involves iterating over arrays, objects, or executing code a certain number of times. Each loop has its own advantages and is used in different situations.
+
+
+
+
+
+12) How can you convert the string of any base to an integer in JavaScript?
+Ans:    In JavaScript, you can convert a string representing a number in any base (binary, octal, 
+        hexadecimal, etc.) to an integer using the parseInt() function. parseInt() allows you to specify the base (radix) of the input string as the second argument. Here's how you can do it:
+
+            const binaryString = "1010"; // Binary representation of 10
+            const octalString = "12";    // Octal representation of 10
+            const hexadecimalString = "A"; // Hexadecimal representation of 10
+
+            const binaryToInteger = parseInt(binaryString, 2);      // Base 2 (binary) to integer
+            const octalToInteger = parseInt(octalString, 8);        // Base 8 (octal) to integer
+            const hexadecimalToInteger = parseInt(hexadecimalString, 16); // Base 16 (hexadecimal) to integer
+
+            console.log(binaryToInteger);      // Output: 10
+            console.log(octalToInteger);       // Output: 10
+            console.log(hexadecimalToInteger); // Output: 10
+
+        In the code above:
+        1.We have three different strings representing the number 10 in various bases (binary, octal, and hexadecimal).
+        2. We use parseInt() with the appropriate radix (base) as the second argument to convert these strings to integers.
+        3. Make sure to specify the correct radix when using parseInt() to ensure accurate conversions. If the radix is not specified, JavaScript will attempt to determine the radix automatically, which can lead to unexpected results, especially for strings that don't start with "0x" (hexadecimal) or "0" (octal).
+
+
+
+
+
+
+13) What is the function of the delete operator?
+Ans:    The delete operator in JavaScript is used to remove a property from an object or to delete an 
+        element from an array. Its behavior and effects differ depending on whether it is used with objects or arrays:
+
+        1. Deleting Properties from Objects:
+            When used with objects, the delete operator is used to remove a specific property from the object.
+
+                const person = {
+                    firstName: 'John',
+                    lastName: 'Doe',
+                    age: 30
+                };
+
+                // Deleting the "age" property from the "person" object
+                delete person.age;
+
+                console.log(person); // { firstName: 'John', lastName: 'Doe' }
+            In this example, the delete operator removes the "age" property from the "person" object.
+            Important Note: The delete operator only removes the property from the object if the property is configurable. Some properties, like properties of built-in objects, may not be configurable and cannot be deleted.
+
+        2. Deleting Elements from Arrays:
+            When used with arrays, the delete operator is used to delete an element at a specified index, but it does not actually remove the element; instead, it leaves an "empty" or "undefined" slot in the array.
+
+                const numbers = [1, 2, 3, 4, 5];
+
+                // Deleting the element at index 2
+                delete numbers[2];
+
+                console.log(numbers); // [1, 2, <1 empty item>, 4, 5]
+
+            In this example, the element at index 2 is deleted, but the array still has a length of 5, and an "empty" slot is left at index 2.
+            To truly remove an element from an array and maintain the correct length and order, it's better to use methods like splice() or create a new array with the unwanted elements filtered out.
+
+        3. Limitations:
+            The delete operator has some limitations:
+                *It cannot be used to delete variables or function declarations.
+                *It may not work as expected for properties of certain built-in objects, such as properties of the global object (window in browsers).
+                *It doesn't reclaim memory used by deleted properties or elements; it merely removes references to them.
+
+        In many cases, when working with objects and arrays, it's preferable to use other techniques like setting properties to null or undefined, or using array methods to remove elements, depending on your specific requirements.
+
+
+
+
+
+14) What are all the types of Pop up boxes available in JavaScript?
+Ans: In JavaScript, there are three types of popup dialog boxes that you can use to interact with users 
+    and gather input or display messages. These popup boxes are known as "dialog boxes" or "popup boxes," and they are created using built-in functions. The three types of popup boxes are:
+
+    1. Alert Box:
+        The alert() function is used to display a simple message to the user in a popup dialog box. It typically contains an "OK" button for the user to acknowledge the message. Alert boxes are often used to display important information or warnings to users.
+        Example:
+            alert("This is an alert box!");
+
+    2. Confirm Box:
+        The confirm() function is used to create a popup dialog box with a message and two buttons: "OK" and "Cancel." It allows the user to make a binary choice (yes or no, true or false) and returns a Boolean value (true for "OK" and false for "Cancel").
+        Example:
+            const result = confirm("Do you want to continue?");
+            if (result) {
+                // User clicked "OK"
+            } else {
+                // User clicked "Cancel"
+            }
+
+    3. Prompt Box:
+        The prompt() function is used to create a popup dialog box with a message, an input field, and two buttons: "OK" and "Cancel." It allows the user to enter a text response, which is returned as a string. If the user clicks "OK" without entering any text, an empty string is returned.
+        Example:
+            const userInput = prompt("Please enter your name:", "John Doe");
+            if (userInput !== null) {
+                // User entered a value (not canceled)
+                console.log("Hello, " + userInput);
+            } else {
+                // User clicked "Cancel" or closed the prompt
+                console.log("No name entered.");
+            }
+    
+    These popup boxes are useful for gathering user input or providing important information in a user-friendly manner. However, they should be used judiciously, as excessive use of popup boxes can disrupt the user experience. Additionally, modern web applications often use custom modal dialogs or other UI patterns for more control and flexibility in displaying messages and gathering input
+
+
+
+
+
+
+15) What is the use of Void (0)?
+Ans:    The void(0) expression is commonly used in JavaScript to create a no-op or void operation. It 
+        doesn't have a direct functional purpose in most modern web development contexts but has historical significance. Here's an explanation of its use and why it's used:
+
+        1. Historical Usage:
+            In the past, when handling JavaScript in the <a> (anchor) element's href attribute, using javascript:void(0); was a common practice. This approach was used to prevent the browser from navigating to a new page when the anchor link was clicked while still allowing JavaScript to execute.
+
+            For example:
+                <a href="javascript:void(0);" onclick="myFunction();">Click Me</a>
+
+            In this code, javascript:void(0); was used in the href attribute to avoid page navigation, and the myFunction() JavaScript function would be executed when the link was clicked.
+
+        2. Preventing Default Behavior:
+            Another common use of javascript:void(0); was to prevent the default behavior of an anchor link without the need for additional JavaScript code. For instance:
+
+                <a href="javascript:void(0);" onclick="return false;">Click Me</a>
+
+            In this example, return false; in the onclick attribute effectively prevented the link from navigating to a new page.
+
+        3. Modern Practices:
+            In modern web development, it is generally recommended to avoid using javascript:void(0); for preventing anchor links from navigating to a new page. Instead, developers often use JavaScript event handlers and methods like event.preventDefault() to achieve the same result in a more standard and maintainable way:
+
+                <a href="#" onclick="myFunction(event);">Click Me</a>
+                <script>
+                    function myFunction(event) {
+                        event.preventDefault();
+                        // Your JavaScript code here
+                    }
+                </script>
+
+            This approach separates the behavior from the HTML attributes and allows for more flexibility and readability.
+
+
+
+
+
+
+16) How can a page be forced to load another page in JavaScript?
+Ans:    In JavaScript, you can force a web page to load another page by changing the window.location 
+        property to the URL of the target page you want to load. Here's how you can do it:
+
+        // Redirect to a new page
+        window.location.href = 'https://www.example.com/newpage.html';
+
+        In the code above:
+        
+        window.location.href is set to the URL of the target page ('https://www.example.com/newpage.html' in this example).
+        When this code is executed, the current web page will navigate to the specified URL, effectively loading the new page. This technique is often used for various purposes, including redirections, user authentication, and page transitions in web applications.
+
+        You can also use window.location.replace() to load a new page while replacing the current page in the browser's history:
+
+            // Load a new page and replace the current page in the history
+            window.location.replace('https://www.example.com/newpage.html');
+
+        Keep in mind that when you force a page to load another page using JavaScript, the current page is essentially replaced by the new one, and any unsaved data or changes on the current page will be lost. Additionally, make sure that the target URL is valid and that you have the appropriate permissions to access it, as security and cross-origin policies can come into play when loading external content.
+
+
+
+
+
+
+
+17) What are the disadvantages of using innerHTML in JavaScript?
+Ans:    While the innerHTML property in JavaScript is a powerful and convenient way to manipulate the 
+        content of HTML elements, it has some disadvantages and potential risks when used improperly. Here are some of the drawbacks and concerns associated with using innerHTML:
+
+        1. Security Risks (Cross-Site Scripting - XSS):
+            One of the most significant disadvantages of using innerHTML is the potential for introducing security vulnerabilities, specifically Cross-Site Scripting (XSS) attacks. If you use innerHTML to insert user-generated or untrusted content into a web page without proper sanitization or validation, it can execute malicious scripts, steal user data, or manipulate the page in unexpected ways. To mitigate this risk, it's crucial to validate and sanitize any user-generated content before using innerHTML.
+        
+        2. Performance Impact:
+            Manipulating the innerHTML of an element can have performance implications, especially when dealing with large or complex DOM structures. When you use innerHTML to update an element's content, the browser may need to re-parse and rebuild parts of the DOM, which can be less efficient than directly modifying specific DOM nodes using other methods like createElement and appendChild.
+
+        3. Event Handlers and Data Binding:
+            When you replace or modify an element's content using innerHTML, any existing event listeners and data bindings attached to child elements may be lost or disrupted. This can lead to unexpected behavior in your web application if you rely on these features.
+
+        4. Limited Control Over DOM Structure:
+            Using innerHTML to modify content often involves working with raw HTML strings, which can be error-prone and less maintainable than manipulating the DOM directly. It can be challenging to ensure that the generated HTML structure is always correct and valid.
+
+        5. Compatibility and Portability:
+            While innerHTML is widely supported in modern browsers, there may be variations in behavior and compatibility with older browsers. Additionally, if you plan to port your code to other platforms or environments (e.g., server-side rendering with Node.js), reliance on innerHTML may not be as straightforward.
+
+        6. Accessibility Concerns:
+            When you use innerHTML to modify content, you should be mindful of accessibility concerns. Dynamically generated content should be properly labeled and structured to ensure that it is accessible to users with disabilities. Manual adjustments may be required to maintain accessibility standards.
+
+        To mitigate these disadvantages, it's important to use innerHTML judiciously and follow best practices:
+        
+        * Sanitize User Input: Always validate and sanitize any user-generated content before inserting it into the DOM.
+        * Consider Performance: Assess whether manipulating the DOM using innerHTML is the most efficient approach, especially for complex operations.
+        * Preserve Event Handlers: If you're replacing content with event listeners, reattach those listeners as needed.
+        * Test Across Browsers: Ensure that your code works consistently across different browsers and environments.
+        * Consider Alternative DOM Manipulation Methods: Depending on your use case, consider using other DOM manipulation methods like createElement, appendChild, and textContent for more controlled and efficient updates.
+
+        Overall, while innerHTML is a valuable tool for working with HTML content in JavaScript, it should be used thoughtfully and with an awareness of its potential risks and limitations.
+
+
+
+
+18) Create password field with show hide functionalities 
+Ans:    <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Password Field with Show/Hide</title>
+        </head>
+        <body>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <input type="checkbox" id="showPassword"> <b>Show Password</b>
+
+            <script>
+                let passwordInput = document.getElementById('password');
+                let showPasswordofCheckbox = document.getElementById('showPassword');
+
+                showPasswordCheckbox.addEventListener('change', function () {
+                    if (showPasswordofCheckbox.checked) 
+                    {
+                        passwordInput.type = 'text'; // Show the password
+                    } else 
+                    {
+                        passwordInput.type = 'password'; // Hide the password
+                    }
+                });
+            </script>
+        </body>
+        </html>
+
+
+
+
+
+
+
+19) • Create basic math operation in JS.
+Ans: 
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            width: 500px;
+            border: 2px solid black;
+            margin-left: 30%;
+            padding: 30px;
+        }
+        input {
+            height: 22px;
+            width: 95%;
+        }
+        .grid {
+            display: flex;
+            flex-direction: unset;
+            width: 100%;
+        }
+        .grid1 {
+            width: 40%;
+        }
+        .grid2 {
+            width: 60%;
+        }
+        button {
+            height: 44px;
+            width: 51px;
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+        p {
+            margin: 15% 0px 0px 19%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Maths Operation</h1>
+    <div class="calculator">
+        <div class="grid">
+            <div class="grid1">
+                <label for=""><b>Enter 1st number:</b></label> <br> <br> <br>
+                <label for=""><b>Enter 2nd number:</b></label> <br> <br><br>
+                <button onclick="calculate('add')">+</button>
+                <button onclick="calculate('subtract')">-</button>
+                <button onclick="calculate('multiply')">*</button>
+                <button onclick="calculate('divide')">/</button>
+                <button onclick="calculate('mod')">%</button>
+            </div>
+            <div class="grid2">
+                <input type="number" id="num1" placeholder="Enter the first number"><br> <br>
+                <input type="number" id="num2" placeholder="Enter the second number"><br> <br>
+                <p id="result"><b>Answer is: </b></p>
+            </div>
+        </div>
+    </div>
+    <!-- script tag for java script -->
+    <script>
+        function calculate(operation) {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var resultElement = document.getElementById("result");
+            var result;
+            if (isNaN(num1) || isNaN(num2)) {
+                result = "Please enter valid numbers.";
+            } else {
+                switch (operation) {
+                    case 'add':
+                        result = num1 + num2;
+                        break;
+                    case 'subtract':
+                        result = num1 - num2;
+                        break;
+                    case 'multiply':
+                        result = num1 * num2;
+                        break;
+                    case 'divide':
+                        if (num2 === 0) {
+                            result = "Division by zero is not allowed.";
+                        } else {
+                            result = num1 / num2;
+                        }
+                    case 'mod' :
+                        if (isNaN(num1) || isNaN(num2)) {
+                                resultElement.textContent = "Please enter valid numbers.";
+                            } else {
+                                var result = num1 % num2;
+                                resultElement.textContent = "Result: " + result;
+                            }
+                            break;
+                    default:
+                        result = "Invalid operation.";
+                }
+            }
+            resultElement.textContent = "Result: " + result;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+20) Create result.
+Ans: 
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            border: 2px solid black;
+            width: 600px;
+            padding: 30px;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        label{
+            font-size: 20px;
+        }
+        input{
+            height: 18px;
+            width: 100%;
+        }
+        button{
+            font-size: 16px;
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Marksheet for Information Technology</h1>
+    <h3 style="text-align: center;">Enter Marks</h3>
+    <div class="grid">
+        <div class="g1">
+            <p><label for="subject1">1. C Language</label></p>
+            <p><label for="subject2">2. C++ Language</label></p>
+            <p><label for="subject3">3. Database</label></p>
+            <p><label for="subject4">4. HTML</label></p>
+            <p><label for="subject5">5. CSS</label></p>
+            <p><label for="subject6">6. php</label></p>
+            <p><label for="subject7">7. Core java</label></p>
+            <br><br> <br>
+        <b>Total Marks: <span id="totalMarks">-</span></b>
+        </div>
+        <div class="g2">
+            <p><input type="number" id="subject1" placeholder="Enter marks"></p>
+            <p><input type="number" id="subject2" placeholder="Enter marks"></p>
+            <p><input type="number" id="subject3" placeholder="Enter marks"></p>
+            <p><input type="number" id="subject4" placeholder="Enter marks"></p>
+            <p><input type="number" id="subject5" placeholder="Enter marks"></p>
+            <p><input type="number" id="subject6" placeholder="Enter marks"></p>
+            <p><input type="number" id="subject7" placeholder="Enter marks"></p>
+            <button onclick="calculateMarksheet()">Result</button>
+            <p><b>Average: <span id="average">-</span></b></p>
+        </div>
+    </div>
+    <script>
+        function calculateMarksheet() {
+            var subject1 = parseFloat(document.getElementById("subject1").value);
+            var subject2 = parseFloat(document.getElementById("subject2").value);
+            var subject3 = parseFloat(document.getElementById("subject3").value);
+            var subject4 = parseFloat(document.getElementById("subject4").value);
+            var subject5 = parseFloat(document.getElementById("subject5").value);
+            var subject6 = parseFloat(document.getElementById("subject6").value);
+            var subject7 = parseFloat(document.getElementById("subject7").value);
+            var totalMarksElement = document.getElementById("totalMarks");
+            var averageElement = document.getElementById("average");
+            if (isNaN(subject1) || isNaN(subject2) || isNaN(subject3) || isNaN(subject4) || isNaN(subject5) || isNaN(subject6) || isNaN(subject7)) {
+                totalMarksElement.textContent = "Invalid input";
+                averageElement.textContent = "Invalid input";
+                return;
+            }
+            var totalMarks = subject1 + subject2 + subject3+ subject4+ subject5+ subject6+ subject7;
+            var average = totalMarks / 7;
+            console.log(totalMarks);
+            document.getElementById("totalMarks").innerHTML = totalMarks ;
+            document.getElementById("average").innerHTML = average.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+21) Create a slider using JavaScript.
+Ans: 
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fody Slider</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+:root {
+  --primary: #ec994b;
+  --white: #ffffff;
+  --bg: #f5f5f5;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1440px) {
+  html {
+    zoom: 1.5;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    zoom: 1.7;
+  }
+}
+
+@media (min-width: 3860px) {
+  html {
+    zoom: 2.5;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 1.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #797979;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222224;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--bg);
+}
+
+.container {
+  max-width: 124rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 3rem;
+  color: var(--primary);
+  padding: 2rem 0;
+}
+
+#tranding {
+  padding: 4rem 0;
+}
+
+@media (max-width:1440px) {
+  #tranding {
+    padding: 7rem 0;
+  }
+}
+
+#tranding .tranding-slider {
+  height: 52rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+@media (max-width:500px) {
+  #tranding .tranding-slider {
+    height: 45rem;
+  }
+}
+
+.tranding-slide {
+  width: 37rem;
+  height: 42rem;
+  position: relative;
+}
+
+@media (max-width:500px) {
+  .tranding-slide {
+    width: 28rem !important;
+    height: 36rem !important;
+  }
+  .tranding-slide .tranding-slide-img img {
+    width: 28rem !important;
+    height: 36rem !important;
+  }
+}
+
+.tranding-slide .tranding-slide-img img {
+  width: 37rem;
+  height: 42rem;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.tranding-slide .tranding-slide-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tranding-slide-content .food-price {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: var(--white);
+}
+
+.tranding-slide-content .tranding-slide-content-bottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: var(--white);
+}
+
+.food-rating {
+  padding-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.rating ion-icon {
+  color: var(--primary);
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.tranding-slider-control {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tranding-slider-control .swiper-button-next {
+  left: 58% !important;
+  transform: translateX(-58%) !important;
+}
+
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+}
+
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-next {
+    left: 80% !important;
+    transform: translateX(-80%) !important;
+  }
+}
+
+@media (max-width:990px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 30% !important;
+    transform: translateX(-30%) !important;
+  }
+}
+
+@media (max-width:450px) {
+  .tranding-slider-control .swiper-button-prev {
+    left: 20% !important;
+    transform: translateX(-20%) !important;
+  }
+}
+
+.tranding-slider-control .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  left: 42%;
+  transform: translateX(-42%);
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.tranding-slider-control .slider-arrow::after {
+  content: '';
+}
+
+.tranding-slider-control .swiper-pagination {
+  position: relative;
+  width: 15rem;
+  bottom: 1rem;
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+
+.tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
+    </style>
+  </head>
+
+  <body>
+    <section id="tranding">
+      <div class="container">
+        <h3 class="text-center section-subheading">- popular Delivery -</h3>
+        <h1 class="text-center section-heading">Tranding food</h1>
+      </div>
+      <div class="container">
+        <div class="swiper tranding-slider">
+          <div class="swiper-wrapper">
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Special Pizza
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://st4.depositphotos.com/1158226/21391/i/450/depositphotos_213910052-stock-photo-tasty-roasted-chicken-wings-metal.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Meat Ball
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://image.shutterstock.com/image-photo/healthy-food-clean-eating-selection-260nw-722718082.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$40</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Burger
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://thumbs.dreamstime.com/b/assorted-indian-recipes-food-various-spices-rice-wooden-table-92742528.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$15</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Frish Curry
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_xdKg2OssMWPE-SqkgOduIZDcEykLm6N6_hdmsJfl&s" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$15</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Pane Cake
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://media.istockphoto.com/id/1457889029/photo/group-of-food-with-high-content-of-dietary-fiber-arranged-side-by-side.jpg?b=1&s=612x612&w=0&k=20&c=BON5S0uDJeCe66N9klUEw5xKSGVnFhcL8stPLczQd_8=" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$20</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Vanilla cake
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+            <!-- Slide-start -->
+            <div class="swiper-slide tranding-slide">
+              <div class="tranding-slide-img">
+                <img src="https://www.shutterstock.com/image-photo/healthy-food-clean-eating-selection-260nw-722718097.jpg" alt="Tranding">
+              </div>
+              <div class="tranding-slide-content">
+                <h1 class="food-price">$8</h1>
+                <div class="tranding-slide-content-bottom">
+                  <h2 class="food-name">
+                    Straw Cake
+                  </h2>
+                  <h3 class="food-rating">
+                    <span>4.5</span>
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slide-end -->
+          </div>
+
+          <div class="tranding-slider-control">
+            <div class="swiper-button-prev slider-arrow">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div class="swiper-button-next slider-arrow">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var TrandingSlider = new Swiper('.tranding-slider', {
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: 'auto',
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 100,
+    modifier: 2.5,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
+    </script>
+  </body>
+
+</html>
