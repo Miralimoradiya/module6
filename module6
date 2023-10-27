@@ -1,41 +1,13 @@
 1) What is JavaScript?
-Ans:    JavaScript is a high-level, versatile, and widely used programming language primarily known for its 
-        role in web development. Here are some key aspects of JavaScript:
-
-        1. Client-Side Scripting: 
-            JavaScript is mainly used for client-side web development. It runs in web browsers, allowing developers to create interactive and dynamic web pages. It can be used to manipulate the Document Object Model (DOM), which represents the structure and content of a web page, to respond to user actions, update content, and enhance the user experience.
-
-        2. General-Purpose: 
-            While JavaScript is commonly associated with web development, it is a general-purpose programming language. This means it can be used for various applications beyond the web, including server-side development (using Node.js), desktop application development, game development, and more.
-
-        3. Dynamic and Weakly Typed: 
-            JavaScript is a dynamically typed language, which means you don't need to declare variable types explicitly. It's also weakly typed, allowing for flexible type conversions. This can be both an advantage and a source of potential bugs if not used carefully.
-
-        4. Event-Driven: 
-            JavaScript is often used to handle events and user interactions on web pages. Developers can attach event handlers to elements, such as buttons or forms, to define how the page should respond when events like clicks, mouse movements, or keyboard inputs occur.
-
-        5. ECMAScript: 
-            JavaScript is standardized through the ECMAScript specification. ECMAScript defines the syntax and core features of the language. Different versions of JavaScript (ES5, ES6, ES7, etc.) correspond to different versions of the ECMAScript specification, with each version introducing new features and improvements.
-
-        6. Libraries and Frameworks: 
-            JavaScript has a rich ecosystem of libraries and frameworks, such as jQuery, React, Angular, and Vue.js, that simplify and streamline web development tasks. These tools provide pre-built components, abstractions, and patterns for building complex web applications.
-
-        7. Cross-Browser Compatibility: 
-            JavaScript is supported by all major web browsers, including Chrome, Firefox, Safari, and Edge, which makes it a suitable choice for creating web applications that work across different platforms.
-
-        8. Asynchronous Programming: 
-            JavaScript excels at asynchronous programming, allowing developers to handle tasks like making network requests (AJAX), reading/writing files, and handling timers without blocking the main execution thread, which ensures smooth user experiences.
-
-
+Ans:  JavaScript was initially created to “make web pages alive”. The programs in this language are 
+      called scripts. They can be written right in a web page’s HTML and run automatically as the page loads. Scripts are provided and executed as plain text. They don’t need special preparation or compilation to run.
 
 
 
 
 2) What is the use of isNaN function?
-Ans:    The isNaN function in JavaScript is used to determine whether a value is "Not-a-Number" (NaN) or 
-        not. NaN is a special value in JavaScript that represents the result of an invalid or unrepresentable mathematical operation. It's often used to indicate that a numeric operation couldn't produce a meaningful result.
-
-        The isNaN function takes one argument and returns a Boolean value:
+Ans:    The JavaScript isNaN() Function is used to check whether a given value is an illegal number or 
+        not.It returns true if the value is a NaN else returns false.
 
         If the argument is NaN or cannot be converted to a number, isNaN returns true.
         If the argument is a valid number (including positive and negative numbers, zero, and numeric strings that can be converted to numbers), isNaN returns false.
@@ -48,11 +20,6 @@ Ans:    The isNaN function in JavaScript is used to determine whether a value is
             isNaN(true);          // false (true is converted to 1)
             isNaN(false);         // false (false is converted to 0)
             isNaN(undefined);     // true (undefined cannot be converted to a number)
-        
-        The isNaN function is often used in conditional statements or validation checks to handle cases where you need to determine whether a value is a valid number or not. For example, you might use it to validate user input in a form, ensuring that numeric input is indeed a number before performing calculations.
-
-        It's worth noting that isNaN has some quirks. For example, it can return true for values that you might not expect, such as empty strings (""). To perform more robust numeric checks, you may want to consider using Number.isNaN() introduced in ECMAScript 6 (ES6), which is stricter in its evaluation and doesn't coerce non-numeric values to numbers.
-
 
 
 
@@ -62,25 +29,7 @@ Ans:    The isNaN function in JavaScript is used to determine whether a value is
 Ans:    Negative Infinity, often denoted as -Infinity, is a special numeric value in JavaScript and many 
         other programming languages. It represents the concept of negative infinity, which is a value that is smaller (or "less") than any finite negative number. In mathematical terms, it's used to describe a quantity that approaches negative infinity as it decreases without bound.
 
-        In JavaScript, you can encounter -Infinity as a result of certain operations or calculations. Here are a few examples:
-
-        1) Division by Zero: When you divide a finite number by zero in JavaScript, the result is -Infinity. For example:
-            var result = 10 / 0; // result is -Infinity
-
-        2) Subtraction from Negative Infinity: When you subtract a finite number from -Infinity, the result remains -Infinity. For example:
-            var result = -Infinity - 5; // result is -Infinity
-        
-        3) Mathematical Functions: Some mathematical functions or expressions can lead to -Infinity. For instance, taking the natural logarithm (Math.log()) of zero will yield -Infinity.
-            var result = Math.log(0); // result is -Infinity
-
-        It's important to note that -Infinity is not the same as the absence of a value (like undefined or null). It's a legitimate numeric value, albeit a special one that represents a value that's smaller than any finite negative number.
-
-        When working with -Infinity in JavaScript, you can use it in mathematical operations, comparisons, or conditions like any other number. For example, you can compare it to other numbers:
-            console.log(-Infinity < 0); // true
-            console.log(-Infinity > -1000); // true
-            console.log(-Infinity === -Infinity); // true
-        
-        In practical programming scenarios, -Infinity can be useful when dealing with scenarios where values can approach negative infinity or when handling exceptional cases like division by zero.
+        NEGATIVE_INFINITY is a special numeric value that is returned when an arithmetic operation or mathematical function generates a negative value greater than the largest representable number in JavaScript (i.e., more negative than -Number. MAX_VALUE) . JavaScript displays the NEGATIVE_INFINITY value as -Infinity
 
 
 
@@ -92,9 +41,6 @@ Ans:    JavaScript was developed by Netscape Communications Corporation, a techn
 
         JavaScript was introduced in Netscape Navigator 2.0, one of the earliest web browsers, to add interactivity and dynamic behavior to web pages. Its initial purpose was to handle client-side scripting, enabling web developers to create more engaging and interactive websites.
 
-        JavaScript's popularity grew rapidly, and it became a fundamental technology for web development. Today, JavaScript is supported by all major web browsers and has evolved into a versatile and widely used programming language not only for web development but also for various other application domains, including server-side development (with Node.js), mobile app development, and more.
-
-
 
 
 
@@ -105,34 +51,16 @@ Ans:    "Undeclared" and "undefined" variables are related but distinct concepts
 
         1. Undeclared Variables:
             An undeclared variable is a variable that has been used in code without being declared (i.e., it lacks a var, let, or const keyword) in the current scope. When you attempt to use an undeclared variable, JavaScript will typically throw a reference error.
-                Example of an undeclared variable:
-                console.log(x); // ReferenceError: x is not defined
-            To avoid reference errors related to undeclared variables, it's essential to declare them using var, let, or const before using them.
 
         2. Undefined Variables:
             An undefined variable is a variable that has been declared but has not been assigned a value. In JavaScript, when you declare a variable without initializing it, it automatically gets the value undefined by default.
-                Example of an undefined variable:
-                let y;
-                console.log(y); // undefined
-            In this example, y has been declared using let, but it hasn't been assigned any value, so its default value is undefined.
-            It's important to note that "undefined" is a special value in JavaScript, and it represents the absence of a value or a variable that has been declared but not yet assigned a value.
-
-        Here's a summary of the differences:
-        Undeclared variables are those that have not been declared at all in the current scope and will result in a reference error when used.
-        Undefined variables are those that have been declared but have not been assigned a value. They have the value undefined by default.
-        It's generally a good practice to declare variables explicitly and initialize them with appropriate values to avoid confusion and unexpected behavior in your code.
-
-
 
 
 
 
 
 6) Write the code for adding new elements dynamically?
-Ans:    To add new elements dynamically to a web page using JavaScript, you can follow these steps. In 
-        this example, we'll add new list items to an unordered list (<ul>) whenever a button is clicked.
-
-        HTML:
+Ans:    HTML:
             <!DOCTYPE html>
             <html lang="en">
             <head>
@@ -168,43 +96,13 @@ Ans:    To add new elements dynamically to a web page using JavaScript, you can 
                 myList.appendChild(newItem);
             }
 
-            // Add a click event listener to the button
-            addItemButton.addEventListener('click', addItem);
-
-        In this code:
-        1. We start with an empty unordered list (<ul>) and a button (<button>) in the HTML.
-        2. In the JavaScript code, we get references to the list and the button using document.getElementById.
-        3. We define a function addItem that creates a new list item (<li>), sets its text content to "New Item," and appends it to the existing list (myList) using the appendChild method.
-        4. We add a click event listener to the button (addItemButton) that calls the addItem function when the button is clicked.
-
-        Now, when you click the "Add Item" button, a new list item will be added to the unordered list on the web page. You can further customize the content and attributes of the dynamically added elements as needed for your specific use case.
-
 
 
 
 
 7) What is the difference between ViewState and SessionState?
-Ans:    ViewState and SessionState are two distinct concepts in web development, often associated 
-        with different technologies and serving different purposes. They are commonly used in the context of ASP.NET, a web application framework, but similar concepts exist in other web development environments as well. Let's explore the key differences between ViewState and SessionState:
-    
-    1. Scope:
-        ViewState: ViewState is specific to a single web page (or web control) and is used to maintain state information across postbacks for that page. It is stored as a hidden field in the HTML markup and sent back and forth between the client and server with each request/response cycle for that page.
-        SessionState: SessionState is not tied to a specific page but is associated with a user's session on the web server. It allows you to store and retrieve user-specific data across multiple pages within a single user session. Data stored in SessionState is typically kept on the server.
-
-    2.Lifetime:
-        ViewState: The data stored in ViewState is only available for the duration of a single page's lifecycle. Once the page is rendered and sent to the client, ViewState data is lost.
-        SessionState: Data stored in SessionState persists throughout a user's session. It remains accessible as long as the session is active, even if the user navigates to different pages within the application.
-
-    3.Storage Location:
-        ViewState: ViewState data is stored as a hidden field within the page's HTML markup and is transferred between the client and server with each request/response for that page.
-        SessionState: SessionState data is stored on the web server. Depending on the configuration, it can be stored in memory, in a separate process (e.g., State Server or SQL Server), or even in a custom storage provider.
-
-    4. Usage:
-        ViewState: ViewState is typically used for maintaining small amounts of page-specific state information, such as control values or other data needed for postbacks on a single page.
-        SessionState: SessionState is used for storing and sharing user-specific data that needs to persist across multiple pages within a user session. Common examples include user authentication data, shopping cart contents, and user preferences.
-
-    In summary, ViewState is primarily used for preserving page-specific state information across postbacks on a single page, while SessionState is used for maintaining user-specific data across multiple pages and requests within a user's session. Both are useful tools in web development but serve different purposes and have different scopes and lifetimes.
-
+Ans:    ViewState Maintained at page level only. View state can only be visible from a single page and 
+        not multiple pages. It will retain values in the event of a postback operation occurring. Information is stored on the client’s end only. used to allow the persistence of page-instance-specific data. ViewState values are lost/cleared when new page is loaded. SessionState Maintained at session level. Session state value availability is across all pages available in a user session. In session state, user data remains in the server. Data is available to user until the browser is closed or there is session expiration. Information is stored on the server. used for the persistence of user-specific data on the server’s end. SessionState can be cleared by programmer or user or in case of timeouts.
 
 
 
@@ -218,22 +116,6 @@ Ans:    The === operator in JavaScript is called the "strict equality" or "stric
         1. If the types of both operands are the same, and their values are equal, the operator returns true.
         2. If the types of the operands are different, the operator returns false, even if the values may be the same when converted to a common type.
         3. It does not perform automatic type conversion, which can lead to more predictable and reliable comparisons.
-
-        Example comparisons using the === operator:
-            3 === 3        // true (both are numbers with the same value)
-            "hello" === "hello"  // true (both are strings with the same value)
-            true === true  // true (both are booleans with the same value)
-        
-        Conversely, the == operator (loose equality operator) performs type coercion, which means it tries to convert the operands to a common type before making a comparison. This can sometimes lead to unexpected results, especially when comparing values of different types.
-
-        Example comparisons using the == operator:
-            3 == "3"      // true (type coercion: "3" is converted to a number)
-            true == 1     // true (type coercion: true is converted to 1)
-            null == undefined  // true (both are considered loosely equal)
-
-        In most cases, it is recommended to use the === operator (strict equality) because it provides more predictable and reliable comparisons, and it does not rely on potentially unexpected type coercion.
-
-
 
 
 
@@ -258,8 +140,6 @@ Ans:    You can change the style and class of an HTML element using JavaScript. 
 
                     // You can change any CSS property in a similar way
 
-            In this example, we first get a reference to the element with the id "myElement" using getElementById, and then we use the style property to change its background color and font size.
-
         2. Changing the Class of an Element:
             You can change the class of an element by modifying its className property or by using the classList property for more advanced operations. Here's an example:
                 HTML:
@@ -277,81 +157,14 @@ Ans:    You can change the style and class of an HTML element using JavaScript. 
                     myElement.classList.remove('initialClass'); // Removes a class
                     myElement.classList.toggle('active'); // Toggles a class
 
-            In this example, we first get a reference to the element with the id "myElement" and change its class using the className property. Alternatively, we can use the classList property to add, remove, or toggle individual classes. This can be especially useful when you want to manipulate classes without affecting other existing classes on the element.
-
-        By using these methods, you can dynamically change the style and class of HTML elements in response to user interactions or other events in your JavaScript code.
-
 
 
 
 
 
 10) How to read and write a file using JavaScript?
-Ans:    In JavaScript, you can read and write files in different environments, such as in a web browser 
-        using the File API or in a server-side environment like Node.js using the built-in File System (fs) module. Here, I'll provide examples for both scenarios:
-
-        **** Reading and Writing Files in a Browser (Using the File API): ****
-        1. Reading a File (Browser):
-            To read a file in a web browser, you can use the File and FileReader objects from the File API. Here's an example of how to read a text file selected by the user using an input element:
-
-            HTML:
-                <input type="file" id="fileInput">
-                <pre id="fileContent"></pre>
-
-            JavaScript:
-                const fileInput = document.getElementById('fileInput');
-                const fileContent = document.getElementById('fileContent');
-
-                fileInput.addEventListener('change', function () {
-                const file = fileInput.files[0];
-                const reader = new FileReader();
-
-                reader.onload = function (e) {
-                    fileContent.textContent = e.target.result;
-                };
-
-                reader.readAsText(file);
-                });
-
-        2. Writing a File (Browser):
-            Writing files in a web browser is not straightforward due to security restrictions. Typically, web applications don't have direct file-writing capabilities for security reasons. If you need to save data, you can use mechanisms like the Web Storage API (localStorage or sessionStorage) or make a request to a server to handle file creation.
-
-
-        **** Reading and Writing Files in Node.js: ****
-        1.Reading a File (Node.js):
-            In Node.js, you can read files using the built-in fs module. Here's an example:
-
-        JavaScript:
-            const fs = require('fs');
-
-            fs.readFile('example.txt', 'utf8', (err, data) => {
-                if (err) {
-                    console.error(err);
-                    return;
-                }
-                console.log(data);
-            });
-            Writing a File (Node.js):
-
-            Similarly, you can write files using the fs module:
-
-        JavaScript:
-            const fs = require('fs');
-
-            const content = 'This is some text to write to a file.';
-
-            fs.writeFile('example.txt', content, 'utf8', (err) => {
-                if (err) {
-                    console.error(err);
-                    return;
-                }
-                console.log('File has been written.');
-            });
-
-        In both examples for Node.js, make sure to handle errors appropriately, as file operations can potentially fail due to various reasons such as file not found, insufficient permissions, or disk space issues.
-
-        Please note that reading and writing files can have security implications, especially in web applications. Be cautious when handling user-generated content or when dealing with sensitive data.
-
+Ans:    1. file=fopen(getScriptPath(),0); The function fread() is used for reading the file content. 
+        2. str = fread(file,flength(file)) ; The function fwrite() is used to write the contents to the file. 3. file = fopen("c:\MyFile.txt", 3);// opens the file for writing.
 
 
 
@@ -433,64 +246,20 @@ Ans:    In JavaScript, you can convert a string representing a number in any bas
             console.log(octalToInteger);       // Output: 10
             console.log(hexadecimalToInteger); // Output: 10
 
-        In the code above:
-        1.We have three different strings representing the number 10 in various bases (binary, octal, and hexadecimal).
-        2. We use parseInt() with the appropriate radix (base) as the second argument to convert these strings to integers.
-        3. Make sure to specify the correct radix when using parseInt() to ensure accurate conversions. If the radix is not specified, JavaScript will attempt to determine the radix automatically, which can lead to unexpected results, especially for strings that don't start with "0x" (hexadecimal) or "0" (octal).
-
-
 
 
 
 
 13) What is the function of the delete operator?
-Ans:    The delete operator in JavaScript is used to remove a property from an object or to delete an 
-        element from an array. Its behavior and effects differ depending on whether it is used with objects or arrays:
-
-        1. Deleting Properties from Objects:
-            When used with objects, the delete operator is used to remove a specific property from the object.
-
-                const person = {
-                    firstName: 'John',
-                    lastName: 'Doe',
-                    age: 30
-                };
-
-                // Deleting the "age" property from the "person" object
-                delete person.age;
-
-                console.log(person); // { firstName: 'John', lastName: 'Doe' }
-            In this example, the delete operator removes the "age" property from the "person" object.
-            Important Note: The delete operator only removes the property from the object if the property is configurable. Some properties, like properties of built-in objects, may not be configurable and cannot be deleted.
-
-        2. Deleting Elements from Arrays:
-            When used with arrays, the delete operator is used to delete an element at a specified index, but it does not actually remove the element; instead, it leaves an "empty" or "undefined" slot in the array.
-
-                const numbers = [1, 2, 3, 4, 5];
-
-                // Deleting the element at index 2
-                delete numbers[2];
-
-                console.log(numbers); // [1, 2, <1 empty item>, 4, 5]
-
-            In this example, the element at index 2 is deleted, but the array still has a length of 5, and an "empty" slot is left at index 2.
-            To truly remove an element from an array and maintain the correct length and order, it's better to use methods like splice() or create a new array with the unwanted elements filtered out.
-
-        3. Limitations:
-            The delete operator has some limitations:
-                *It cannot be used to delete variables or function declarations.
-                *It may not work as expected for properties of certain built-in objects, such as properties of the global object (window in browsers).
-                *It doesn't reclaim memory used by deleted properties or elements; it merely removes references to them.
-
-        In many cases, when working with objects and arrays, it's preferable to use other techniques like setting properties to null or undefined, or using array methods to remove elements, depending on your specific requirements.
+Ans:    The delete operator removes a property from an object. If the property's value is an object and 
+        there are no more references to the object, the object held by that property is eventually released automatically.
 
 
 
 
 
 14) What are all the types of Pop up boxes available in JavaScript?
-Ans: In JavaScript, there are three types of popup dialog boxes that you can use to interact with users 
-    and gather input or display messages. These popup boxes are known as "dialog boxes" or "popup boxes," and they are created using built-in functions. The three types of popup boxes are:
+Ans: JavaScript has three kind of popup boxes: Alert box, Confirm box, and Prompt box.
 
     1. Alert Box:
         The alert() function is used to display a simple message to the user in a popup dialog box. It typically contains an "OK" button for the user to acknowledge the message. Alert boxes are often used to display important information or warnings to users.
@@ -518,8 +287,6 @@ Ans: In JavaScript, there are three types of popup dialog boxes that you can use
                 // User clicked "Cancel" or closed the prompt
                 console.log("No name entered.");
             }
-    
-    These popup boxes are useful for gathering user input or providing important information in a user-friendly manner. However, they should be used judiciously, as excessive use of popup boxes can disrupt the user experience. Additionally, modern web applications often use custom modal dialogs or other UI patterns for more control and flexibility in displaying messages and gathering input
 
 
 
@@ -527,60 +294,14 @@ Ans: In JavaScript, there are three types of popup dialog boxes that you can use
 
 
 15) What is the use of Void (0)?
-Ans:    The void(0) expression is commonly used in JavaScript to create a no-op or void operation. It 
-        doesn't have a direct functional purpose in most modern web development contexts but has historical significance. Here's an explanation of its use and why it's used:
-
-        1. Historical Usage:
-            In the past, when handling JavaScript in the <a> (anchor) element's href attribute, using javascript:void(0); was a common practice. This approach was used to prevent the browser from navigating to a new page when the anchor link was clicked while still allowing JavaScript to execute.
-
-            For example:
-                <a href="javascript:void(0);" onclick="myFunction();">Click Me</a>
-
-            In this code, javascript:void(0); was used in the href attribute to avoid page navigation, and the myFunction() JavaScript function would be executed when the link was clicked.
-
-        2. Preventing Default Behavior:
-            Another common use of javascript:void(0); was to prevent the default behavior of an anchor link without the need for additional JavaScript code. For instance:
-
-                <a href="javascript:void(0);" onclick="return false;">Click Me</a>
-
-            In this example, return false; in the onclick attribute effectively prevented the link from navigating to a new page.
-
-        3. Modern Practices:
-            In modern web development, it is generally recommended to avoid using javascript:void(0); for preventing anchor links from navigating to a new page. Instead, developers often use JavaScript event handlers and methods like event.preventDefault() to achieve the same result in a more standard and maintainable way:
-
-                <a href="#" onclick="myFunction(event);">Click Me</a>
-                <script>
-                    function myFunction(event) {
-                        event.preventDefault();
-                        // Your JavaScript code here
-                    }
-                </script>
-
-            This approach separates the behavior from the HTML attributes and allows for more flexibility and readability.
-
-
+Ans:    You might have occasionally came across “javascript:void(0)” in an HTML Document. It is often 
+        used when inserting an expression in a web page might produce some unwanted effect. To remove this effect, “javascript:void(0)” is used. This expression returns undefined primitive value.
 
 
 
 
 16) How can a page be forced to load another page in JavaScript?
-Ans:    In JavaScript, you can force a web page to load another page by changing the window.location 
-        property to the URL of the target page you want to load. Here's how you can do it:
-
-        // Redirect to a new page
-        window.location.href = 'https://www.example.com/newpage.html';
-
-        In the code above:
-        
-        window.location.href is set to the URL of the target page ('https://www.example.com/newpage.html' in this example).
-        When this code is executed, the current web page will navigate to the specified URL, effectively loading the new page. This technique is often used for various purposes, including redirections, user authentication, and page transitions in web applications.
-
-        You can also use window.location.replace() to load a new page while replacing the current page in the browser's history:
-
-            // Load a new page and replace the current page in the history
-            window.location.replace('https://www.example.com/newpage.html');
-
-        Keep in mind that when you force a page to load another page using JavaScript, the current page is essentially replaced by the new one, and any unsaved data or changes on the current page will be lost. Additionally, make sure that the target URL is valid and that you have the appropriate permissions to access it, as security and cross-origin policies can come into play when loading external content.
+Ans:     Approach: We can use window.location property inside the script tag to forcefully load another page in Javascript. It is a reference to a Location object that is it represents the current location of the document. We can change the URL of a window by accessing it.
 
 
 
@@ -659,7 +380,7 @@ Ans:    <!DOCTYPE html>
 
 
 
-19) • Create basic math operation in JS.
+19) Create basic math operation in JS.
 Ans: 
 <!DOCTYPE html>
 <html>
